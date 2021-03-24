@@ -1,7 +1,7 @@
 import React, {useEffect, useState, useRef} from 'react'
 import axios from 'axios'
-
-
+import {Link} from 'react-router-dom'
+import CombinedGraph from './CombinedGraph'
 
 export default function Home() {
     const idRef = useRef(null)
@@ -17,7 +17,7 @@ export default function Home() {
     const submitAdd= () => {
         axios.post(`/coins/${idRef.current.value}`).then((response)=>{
             if (!response.data.error){
-                setMessage("successfully added")
+                window.location.reload()
             }
             else {
                 setMessage("failed to add")
@@ -28,7 +28,7 @@ export default function Home() {
     const submitUpdate = () => {
         axios.put(`/coins/${idRef.current.value}`).then((response)=>{
             if (!response.data.error){
-                setMessage("successfully updated")
+                window.location.reload()
             }
             else {
                 setMessage("failed to update")
@@ -40,12 +40,19 @@ export default function Home() {
     const submitDelete = () => {
         axios.delete(`/coins/${idRef.current.value}`).then((response)=>{
             if (!response.data.error){
-                setMessage("successfully deleted")
+                window.location.reload()
             }
             else {
                 setMessage("failed to delete")
             }
         })
+    }
+
+    let ids = []
+    if (list){
+        for (let coin of list ){
+            ids.push(coin.id)
+        }
     }
     return (
         <div className="container">
@@ -57,28 +64,35 @@ export default function Home() {
                 <button onClick={()=>(submitDelete())}  className="btn btn-danger">Delete</button>   
             </div>
             {(list!=null && list.length>0) &&
-            <table>
-                <thead>
-                    <tr>
-                    {Object.keys(list[0]).map((key)=>
-                        <th>{key}</th>
-                    )}
-                    </tr>
-                </thead>
-                <tbody>
-                    {list.map((coin)=>{
-                        return <tr><td><a href="/">View</a></td>
-                            {Object.values(coin).map((value)=>
-                                <td>{(/^https:/).test(value) ?
-                                    <a href={value}>{value}</a>
-                                    : value
-                                }</td>
-                            )}
+            <>
+                <table>
+                    <thead>
+                        <tr>
+                        <th>View</th>
+                        {Object.keys(list[0]).map((key)=>
+                            <th key={key}>{key}</th>
+                        )}
                         </tr>
-                       
-                    })}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {list.map((coin)=>{
+                            return <tr key={coin.id+"row"}>
+                                        <td>
+                                            <Link to={`/graph/${coin.id}`}>View</Link>
+                                        </td>
+                                        {Object.values(coin).map((value)=>
+                                            <td>{(/^https:/).test(value) ?
+                                                <a href={value}>{value}</a>
+                                                : value
+                                                }
+                                            </td>
+                                        )}
+                                    </tr>
+                        })}
+                    </tbody>
+                </table>
+                <CombinedGraph coins={ids}/>
+            </>
             }
            
         </div>
