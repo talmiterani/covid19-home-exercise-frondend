@@ -11,7 +11,6 @@ export default function StatesInfo(props) {
     useEffect( async()  =>  {
          axios.get("/api/statesDetails").then((response)=>{
             setStatesDetails(response.data.data)
-             console.log(response.data.data)
          })
          .catch((err)=>{
              console.log(err)
@@ -21,10 +20,8 @@ export default function StatesInfo(props) {
     
 var DeskRender = (id) =>{
     for(var i of stateDetails){
-        if(i.state == id){
-            var arr = i.notes.split("\n").map((item)=>{
-                
-            })
+        if(i.state === id){
+            
             setModalDesc(i.notes)
         }
     }
@@ -39,17 +36,16 @@ var RenderMap = () => {
                      return( 
                      
                          <div className="row mb-3" key={index}>
-                             <div className="col-md-12">
+                             <div className="col-md-10">
                                  <div className="card h-100 border shadow rounded-2" >
                                  <div className="card-body ">
-                                     <h2 className="card-title font-weight-bold">{state.state} - {stateDetails[index].name}&nbsp;&nbsp;
+                                     <h2 id={state.state} className="card-title font-weight-bold">{state.state} - {stateDetails[index].name}&nbsp;&nbsp;
                                          
                                          <i  className="btn fas fa-info-circle" 
                                          onClick={()=>{
                                              setModalBoolean(true);
                                              DeskRender(state.state)
                                              
-                                            //  setModalDesc(stateDetails[key].name)
                                          }}></i>
                                         
 
@@ -84,14 +80,11 @@ var RenderMap = () => {
                                              </div>
                                          </div>
                                          <div className="row">
-                                             <div className='col-md-3'>
+                                             <div className='col-md-4'>
                                                      <a href={infoLink} style={{color:"blue"}}>covid19Site</a>&nbsp;&nbsp;|&nbsp;&nbsp;
                                                      <a href={secondaryInfoLink} style={{color:"blue"}}>second covid19Site</a>
                                              </div>
                                          </div>
-                                     {/* <Link to={`/state/details/${state.state}`}>
-                                         <button type="submit" className="btn btn-primary" onClick={()=><StateDetails state={state.state}></StateDetails>}>More information</button>
-                                     </Link> */}
                                  </div>
                                  </div>
                              </div>

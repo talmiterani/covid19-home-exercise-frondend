@@ -9,34 +9,37 @@ export default function Navigation() {
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                <div className="collapse navbar-collapse" id="navbarCollapse2">
+                <div className="collapse navbar-collapse " id="navbarCollapse2">
                     <div className="navbar-nav" style={{fontSize:"20px"}}>
-                        <a href="/" className="nav-item nav-link active">Home</a>
+                        <a href="/" className="nav-item nav-link active " style={{marginRight:"10px"}}>Home</a>
                         <div className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a className="nav-link dropdown-toggle active" href="/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             The data
                             </a>
                             <div className="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
-                            <a className="dropdown-item " href="#">Action</a>
-                            <a className="dropdown-item" href="#">Another action</a>
-                            <a className="dropdown-item" href="#">Something else here</a>
+                            <a className="dropdown-item " href="/">Action</a>
+                            <a className="dropdown-item" href="/">Another action</a>
+                            <a className="dropdown-item" href="/">Something else here</a>
                             </div>
                         </div>
                         <div className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a className="nav-link dropdown-toggle active" href="/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             About the data
                             </a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a className="dropdown-item" href="#">Action</a>
-                            <a className="dropdown-item" href="#">Another action</a>
-                            <a className="dropdown-item" href="#">Something else here</a>
+                            <a className="dropdown-item" href="/">Action</a>
+                            <a className="dropdown-item" href="/">Another action</a>
+                            <a className="dropdown-item" href="/">Something else here</a>
                             </div>
                         </div>
                     </div>
-                    <form className="form-inline ml-auto">
-                        <input type="text" className="form-control mr-sm-2" placeholder="Search"/>
-                        <button type="submit" className="btn btn-outline-light">Search</button>
+                    <div className="d-flex flex-row-reverse pt-3" >
+                    <form className="form-inline ml-200px">
+                       
+                            <input type="text" className="form-control mr-sm-2" placeholder="Search" />
                     </form>
+                    </div>
+
                 </div>
             </nav>
         </div>

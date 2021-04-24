@@ -46,11 +46,11 @@ export default function Footer() {
                 </div>
                 </div>
                 <ul className="list-unstyled collapse" id="Company">
-                <li><a href="https://codepen.io/jettaz">About</a></li>
-                <li><a href="https://codepen.io/jettaz">Careers</a></li>
-                <li><a href="https://codepen.io/jettaz">Support</a></li>
-                <li><a href="https://codepen.io/jettaz">Pricing</a></li>
-                <li><a href="https://codepen.io/jettaz">FAQ</a></li>
+                <li><a href="/">About</a></li>
+                <li><a href="/">Careers</a></li>
+                <li><a href="/">Support</a></li>
+                <li><a href="/">Pricing</a></li>
+                <li><a href="/">FAQ</a></li>
                 </ul>
             </div>
             <hr className="clearfix w-100 d-md-none mb-0"/>
@@ -65,11 +65,11 @@ export default function Footer() {
                 </div>
                 </div>
                 <ul className="list-unstyled collapse" id="Resources">
-                <li><a href="https://codepen.io/jettaz">Blog</a></li>
-                <li><a href="https://codepen.io/jettaz">eBooks</a></li>
-                <li><a href="https://codepen.io/jettaz">Whitepapers</a></li>
-                <li><a href="https://codepen.io/jettaz">Comparison Guide</a></li>
-                <li><a href="https://codepen.io/jettaz">Website Grader</a></li>
+                <li><a href="/">Blog</a></li>
+                <li><a href="/">eBooks</a></li>
+                <li><a href="/">Whitepapers</a></li>
+                <li><a href="/">Comparison Guide</a></li>
+                <li><a href="/">Website Grader</a></li>
                 </ul>
             </div>
             <hr className="clearfix w-100 d-md-none mb-0"/>
@@ -84,11 +84,11 @@ export default function Footer() {
                 </div>
                 </div>
                 <ul className="list-unstyled collapse" id="Get-Help">
-                <li><a href="https://codepen.io/jettaz" target="_blank">Help Center</a></li>
-                <li><a href="https://codepen.io/jettaz">Contact Us</a></li>
-                <li><a href="https://codepen.io/jettaz">Privacy Policy</a></li>
-                <li><a href="https://codepen.io/jettaz">Terms</a></li>
-                <li><a href="https://codepen.io/jettaz">Login</a></li>
+                <li><a href="/">Help Center</a></li>
+                <li><a href="/">Contact Us</a></li>
+                <li><a href="/">Privacy Policy</a></li>
+                <li><a href="/">Terms</a></li>
+                <li><a href="/">Login</a></li>
                 </ul>
             </div>
             </div>

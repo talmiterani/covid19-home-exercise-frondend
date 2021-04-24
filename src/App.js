@@ -6,6 +6,7 @@ import HospitalizationGraph from './components/HospitalizationGraph';
 import OutcomesGraph from './components/OutcomesGraph';
 import Navigation from './components/Navigation'
 import Footer from './components/Footer';
+
 function App() {
   return (
     <div className="App">
